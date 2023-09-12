@@ -143,7 +143,7 @@ unset zcompdump_revision zcompdump_fpath zcompdump_refresh
 # zcompile the completion dump file if the .zwc is older or missing.
 if command mkdir "${ZSH_COMPDUMP}.lock" 2>/dev/null; then
   zrecompile -q -p "$ZSH_COMPDUMP"
-  command rm -rf "$ZSH_COMPDUMP.zwc.old" "${ZSH_COMPDUMP}.lock" 
+  command rm -rf "$ZSH_COMPDUMP.zwc.old" "${ZSH_COMPDUMP}.lock"
 fi
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
@@ -190,5 +190,4 @@ if [[ -n "$ZSH_THEME" ]]; then
   fi
 fi
 
-# set completion colors to be the same as `ls`, after theme has been loaded
-[[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+ZSH_THEME="dracula"
